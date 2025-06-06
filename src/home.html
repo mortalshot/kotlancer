@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"HomePage"
+})
+
+<body class="home">
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main id="swup" class="page transition-fade" data-page="home">
+			<section class="firstscreen">
+				<div class="firstscreen__container">
+					<div class="firstscreen__grid">
+						<h1 class="firstscreen__title">kotlancer <br> makes <br> web</h1>
+
+						<div class="firstscreen__body">
+							<div class="firstscreen__hello big-text">привет 👋 <br> я сергей, frontend-разработчик</div>
+
+							<div class="firstscreen__image">
+								<img src="@img/firs-img1.png" alt="" loading="lazy" width="596" height="530">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="widget-cases">
+				<div class="widget-cases__container">
+					<h2 class="cases-title _font-mini _color-accent _heading _with-tag"><mark>/</mark> кейсы</h2>
+
+					<div class="cases__items _heading">
+						<article class="case-item">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">тц киевский</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="@img/cases/case1-preview.jpg" alt="" loading="lazy">
+								</a>
+							</div>
+						</article>
+					</div>
+
+					<div class="widget-cases__button">
+						<a href="archive-cases.html" class="btn btn_bg-accent ripple-button">
+							<span>смотреть все кейсы</span>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="widget-about">
+				<div class="widget-about__container">
+					<div class="widget-about__wrapper">
+						<div class="widget-about__grid">
+							<div class="widget-about__body">
+								<h2 class="widget-about__caption _font-mini _with-tag _color-accent"><mark>/</mark> верстаю с 2019 года</h2>
+								<div class="widget-about__text _content">
+									<p>использую семантические теги с применением BEM-методологии, пишу чистый и валидный код без избыточных библиотек, делаю адаптивную верстку и тестирую ее на IOS и Android устройствах</p>
+								</div>
+
+								<div class="firstscreen__features">
+									<div class="firstscreen__column">
+										<div class="firstscreen__caption _font-mini _color-accent">рассматриваю</div>
+
+										<ul class="firstscreen__list">
+											<li>fulltime <br> удалёнка</li>
+											<li>попроектная <br> работа</li>
+										</ul>
+									</div>
+
+									<div class="firstscreen__column">
+										<div class="firstscreen__caption _color-accent _font-mini">делаю</div>
+
+										<ul class="firstscreen__list">
+											<li>верстка сайтов <br> по макетам из Figma</li>
+											<li>интеграция сайтов <br> на WordPress</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="widget-about__features">
+								<div class="widget-about__item">
+									<div class="widget-about__time _font-mini _color-tag">
+										<span>2019 — по наст. вр.</span>
+									</div>
+									<div class="widget-about__name title-h2">freelance</div>
+								</div>
+								<div class="widget-about__item">
+									<div class="widget-about__time _font-mini _color-tag">
+										<span>2021 — 2024</span>
+										<span>штат</span>
+									</div>
+									<div class="widget-about__name title-h2">the kan agency</div>
+								</div>
+								<div class="widget-about__item">
+									<div class="widget-about__time _font-mini _color-tag">
+										<span>2024 — по наст. вр.</span>
+										<span>попроектно</span>
+									</div>
+									<div class="widget-about__name title-h2">очередное agency</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Cases"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main id="swup" class="page transition-fade" data-page="archive-cases">
+			<!-- <section style="height: 100vh;"></section> -->
+
+			<section class="cases">
+				<div class="cases__container">
+					<h2 class="cases-title _font-mini _with-tag _color-accent _heading">кейсы</h2>
+
+					<div class="cases__filters _heading">
+						<div class="cases__categories cases__categories_desk">
+							<div class="cases__category">
+								<button type="button" class="btn btn_bg-white ripple-button">landing-page</button>
+							</div>
+							<div class="cases__category">
+								<button type="button" class="btn btn_bg-white ripple-button _active">интернет-магазин</button>
+							</div>
+							<div class="cases__category">
+								<button type="button" class="btn btn_bg-white ripple-button">многостраничный сайт</button>
+							</div>
+							<div class="cases__category">
+								<button type="button" class="btn btn_bg-white ripple-button">wordpress</button>
+							</div>
+						</div>
+
+						<div class="cases__categories cases__categories_mob">
+							<select name="form[]" class="form">
+								<option value="landing-page" selected>landing-page</option>
+								<option value="интернет-магазин">интернет-магазин</option>
+								<option value="многостраничный сайт">многостраничный сайт</option>
+								<option value="wordpress">wordpress</option>
+							</select>
+						</div>
+
+						<div class="cases__sorting _font-mini">
+							<a href="">
+								<span>год</span>
+
+								<svg>
+									<use xlink:href="@img/icons/icons.svg#sorting"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+
+					<div class="cases__items">
+						<article class="case-item">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">онлайн-магазин «бани-бочки»</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="@img/cases/case2-preview.jpg" alt="" loading="lazy">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">многостраничный сайт</a>
+									<div class="tags__separator _color-tag">,</div>
+									<a href="" class="tags__tag">wordpress</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2023</a>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

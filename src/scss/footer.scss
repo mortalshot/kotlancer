@@ -1,0 +1,47 @@
+// .footer     ====================================================================================================
+.footer {
+  // .footer__container
+  &__container {
+    @include adaptiveValue("padding-bottom", 104, 52);
+  }
+
+  // .footer__grid
+  &__grid {
+    display: grid;
+    align-content: flex-start;
+    row-gap: toRem(24);
+    @include adaptiveValue("column-gap", 40, 20, 0, 1360, 992);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // .footer__left
+  &__left {
+  }
+
+  // .footer__caption
+  &__caption {
+  }
+
+  // .footer__right
+  &__right {
+    .menu-contacts__items {
+      display: flex;
+      flex-wrap: wrap;
+      margin: toRem(-20);
+    }
+
+    .menu-contacts__item {
+      padding: toRem(10);
+      
+      a {
+        display: inline-block;
+        padding: toRem(10);
+      }
+    }
+  }
+}
+
+//====================================================================================================

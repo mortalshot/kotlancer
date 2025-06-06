@@ -1,0 +1,93 @@
+//<BUTTONS (a.btn+tab)>
+// Сниппет (HTML): btn
+
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: toRem(6);
+	text-align: center;
+	border-radius: toRem(50) !important;
+	border: toRem(1) solid transparent;
+	min-height: toRem(52);
+	padding: toRem(16) toRem(36);
+	position: relative;
+	overflow: hidden;
+	font-weight: 500;
+	font-size: toRem(12);
+	line-height: 120%;
+
+	// .btn_bg-accent
+	&_bg-accent {
+		border: 0 !important;
+		color: $White;
+		background-color: $accent2;
+
+		.fill-effect {
+			background-color: $White;
+		}
+
+		@media (any-hover: hover) {
+			transition:
+				0.5s ease color,
+				0.3s ease background-color 0.1s;
+
+			&:hover {
+				background-color: $White;
+				color: $mainColor;
+			}
+		}
+	}
+
+	// .btn_bg-white
+	&_bg-white {
+		border: 0 !important;
+		color: $mainColor;
+		background-color: $White;
+
+		.fill-effect {
+			background-color: $accent2;
+		}
+
+		@media (any-hover: hover) {
+			transition:
+				0.5s ease color,
+				0.3s ease background-color 0.1s;
+
+			&:hover {
+				color: $White;
+				background-color: $accent2;
+			}
+		}
+	}
+}
+
+.fill-effect {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition:
+		width 0.5s ease,
+		height 0.5s ease;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.ripple-button {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+	@media (any-hover: hover) {
+		&:hover {
+			.fill-effect {
+				width: toRem(400) !important;
+				height: toRem(400) !important;
+			}
+		}
+	}
+}
