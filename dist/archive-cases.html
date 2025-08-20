@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20250606190515">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250820164855">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,16 +56,16 @@
 					<div class="cases__filters _heading">
 						<div class="cases__categories cases__categories_desk">
 							<div class="cases__category">
-								<button type="button" class="btn btn_bg-white ripple-button">landing-page</button>
+								<button type="button" class="cases__filter btn btn_bg-white ripple-button" data-filter-category="landing-page">landing-page</button>
 							</div>
 							<div class="cases__category">
-								<button type="button" class="btn btn_bg-white ripple-button _active">интернет-магазин</button>
+								<button type="button" class="cases__filter btn btn_bg-white ripple-button" data-filter-category="интернет-магазин">интернет-магазин</button>
 							</div>
 							<div class="cases__category">
-								<button type="button" class="btn btn_bg-white ripple-button">многостраничный сайт</button>
+								<button type="button" class="cases__filter btn btn_bg-white ripple-button" data-filter-category="многостраничный сайт">многостраничный сайт</button>
 							</div>
 							<div class="cases__category">
-								<button type="button" class="btn btn_bg-white ripple-button">wordpress</button>
+								<button type="button" class="cases__filter btn btn_bg-white ripple-button" data-filter-category="wordpress">wordpress</button>
 							</div>
 						</div>
 
@@ -79,25 +79,25 @@
 						</div>
 
 						<div class="cases__sorting _font-mini">
-							<a href="">
+							<button type="button" class="cases__sort-btn" data-sort-direction="newest">
 								<span>год</span>
 
 								<svg>
 									<use xlink:href="img/icons/icons.svg#sorting"></use>
 								</svg>
-							</a>
+							</button>
 						</div>
 					</div>
 
 					<div class="cases__items">
-						<article class="case-item">
+						<article class="cases__item case-item" data-categories="многостраничный сайт, wordpress" data-year="2023">
 							<div class="case-item__main">
 								<a href="single-case.html" class="case-item__title">
-									<h3 class="title-h2">онлайн-магазин «бани-бочки»</h3>
+									<h3 class="title-h2">тц киевский</h3>
 								</a>
 
 								<a href="single-case.html" class="case-item__preview js-magnetic-img">
-									<img src="img/cases/case2-preview.webp" alt="" loading="lazy">
+									<img src="img/cases/case1-preview.webp" alt="" loading="lazy" width="660" height="400">
 								</a>
 							</div>
 
@@ -115,6 +115,303 @@
 								<div class="tags__item _font-mini">
 									<div class="tags__caption _color-tag">год /</div>
 									<a href="" class="tags__tag">2023</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="интернет-магазин" data-year="2024">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">онлайн-магазин «бани-бочки»</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case2-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">интернет-магазин</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2024</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="landing-page" data-year="2025">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">онлайн-магазин «бани-бочки»</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case2-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">landing-page</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2025</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="wordpress" data-year="2020">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">тц киевский</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case1-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">wordpress</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2020</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="интернет-магазин" data-year="2024">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">онлайн-магазин «бани-бочки»</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case2-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">интернет-магазин</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2024</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="landing-page" data-year="2025">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">онлайн-магазин «бани-бочки»</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case2-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">landing-page</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2025</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="многостраничный сайт" data-year="2023">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">тц киевский</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case1-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">многостраничный сайт</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2023</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="интернет-магазин" data-year="2024">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">онлайн-магазин «бани-бочки»</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case2-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">интернет-магазин</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2024</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="landing-page" data-year="2025">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">онлайн-магазин «бани-бочки»</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case2-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">landing-page</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2025</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="wordpress" data-year="2025">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">тц киевский</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case1-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">wordpress</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2025</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="интернет-магазин" data-year="2024">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">онлайн-магазин «бани-бочки»</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case2-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">интернет-магазин</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2024</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="cases__item case-item" data-categories="landing-page" data-year="2025">
+							<div class="case-item__main">
+								<a href="single-case.html" class="case-item__title">
+									<h3 class="title-h2">онлайн-магазин «бани-бочки»</h3>
+								</a>
+
+								<a href="single-case.html" class="case-item__preview js-magnetic-img">
+									<img src="img/cases/case2-preview.webp" alt="" loading="lazy" width="660" height="400">
+								</a>
+							</div>
+
+							<div class="case-item__tags tags">
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">проект /</div>
+									<a href="" class="tags__tag">landing-page</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">клиент /</div>
+									<a href="" class="tags__tag">the kan agency</a>
+								</div>
+								<div class="tags__item _font-mini">
+									<div class="tags__caption _color-tag">год /</div>
+									<a href="" class="tags__tag">2025</a>
 								</div>
 							</div>
 						</article>
@@ -162,10 +459,12 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js?_v=20250606190515"></script>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js?_v=20250606190515"></script>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js?_v=20250606190515"></script>
-	<script src="js/app.min.js?_v=20250606190515"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js?_v=20250820164855"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js?_v=20250820164855"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js?_v=20250820164855"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js?_v=20250820164855"></script>
+	<script src="https://unpkg.com/swup@4?_v=20250820164855"></script>
+	<script src="js/app.min.js?_v=20250820164855"></script>
 </body>
 
 </html>

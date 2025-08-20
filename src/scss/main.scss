@@ -146,6 +146,13 @@
   &__title {
   }
 
+  // .widget-cases__item
+  &__item {
+    opacity: 0;
+    transform: translateY(toRem(15));
+    will-change: transform, opacity;
+  }
+
   // .widget-cases__button
   &__button {
     opacity: 0;
@@ -155,11 +162,6 @@
 }
 
 .case-item {
-  opacity: 0;
-  transform: translateY(toRem(15));
-  will-change: transform, opacity;
-  overflow: hidden;
-
   // .case-item__main
   &__main {
     display: grid;
@@ -408,26 +410,28 @@
 
   // .cases__sorting
   &__sorting {
-    a {
-      color: $accent2;
-      display: inline-flex;
-      align-items: center;
-      gap: toRem(8);
+  }
 
-      svg {
-        flex: 0 0 toRem(8);
-        width: toRem(8);
-        height: toRem(14);
-        fill: $accent2;
+  // .cases__sort-btn
+  &__sort-btn {
+    color: $accent2;
+    display: inline-flex;
+    align-items: center;
+    gap: toRem(8);
 
-        transition: $transition ease transform 0s;
-      }
+    svg {
+      flex: 0 0 toRem(8);
+      width: toRem(8);
+      height: toRem(14);
+      fill: $accent2;
 
-      @media (any-hover: hover) {
-        transition: $transition ease opacity 0s;
-        &:hover {
-          opacity: 0.6;
-        }
+      transition: $transition ease transform 0s;
+    }
+
+    @media (any-hover: hover) {
+      transition: $transition ease opacity 0s;
+      &:hover {
+        opacity: 0.6;
       }
     }
 
@@ -447,6 +451,10 @@
       grid-template-columns: repeat(2, 1fr);
       @include adaptiveValue("column-gap", 40, 16, 0, 1440, 992);
     }
+  }
+
+  // .cases__item
+  &__item {
   }
 }
 

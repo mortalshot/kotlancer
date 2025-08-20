@@ -752,18 +752,17 @@ ul li::before {
 .cases-title-line mark:first-child {
   display: none
 }
+.widget-cases__item {
+  opacity: 0;
+  -webkit-transform: translateY(.9375rem);
+  transform: translateY(.9375rem);
+  will-change: transform,opacity
+}
 .widget-cases__button {
   opacity: 0;
   -webkit-transform: translateY(1.875rem);
   transform: translateY(1.875rem);
   will-change: opacity,transform
-}
-.case-item {
-  opacity: 0;
-  -webkit-transform: translateY(.9375rem);
-  transform: translateY(.9375rem);
-  will-change: transform,opacity;
-  overflow: hidden
 }
 .case-item__main {
   display: grid;
@@ -857,20 +856,20 @@ ul li::before {
 .cases__category ._active {
   color: #ff6231
 }
-.cases__sorting a {
+.cases__sort-btn {
   color: #ff6231;
   display: inline-flex;
   align-items: center;
   gap: .5rem
 }
-.cases__sorting a svg {
+.cases__sort-btn svg {
   flex: 0 0 .5rem;
   width: .5rem;
   height: .875rem;
   fill: #ff6231;
   transition: .3s ease transform 0s
 }
-.cases__sorting._active svg {
+.cases__sort-btn._active svg {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg)
 }
@@ -1636,10 +1635,10 @@ ul li::before {
   .cases__category ._active:hover {
     color: #fff
   }
-  .cases__sorting a {
+  .cases__sort-btn {
     transition: .3s ease opacity 0s
   }
-  .cases__sorting a:hover {
+  .cases__sort-btn:hover {
     opacity: .6
   }
 }

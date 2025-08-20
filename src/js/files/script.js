@@ -3,10 +3,36 @@ import { isMobile, bodyLockToggle } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
-import Swup from 'swup';
-const swup = new Swup({
-  animationSelector: '#swup'
+let swup;
+function initSwup() {
+  if (swup) return; // не инициализировать дважды!
+  swup = new Swup({
+    animationSelector: '#swup'
+  });
+
+  swup.hooks.replace('animation:out:await', async () => {
+    console.log('ANIMATION OUT');
+    await gsap.to('#swup', { opacity: 0, y: 50, duration: 0.5 });
+  });
+  swup.hooks.replace('animation:in:await', async () => {
+    console.log('ANIMATION IN');
+    gsap.set('#swup', { opacity: 0, y: 50 });
+    handleLogo();
+
+
+    initPageAnimations();
+    await gsap.to('#swup', { opacity: 1, y: 0, duration: 0.5 });
+    ScrollTrigger.refresh();
+  });
+}
+
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    swup = null; // сбросим, чтобы можно было заново инициализировать
+    initSwup();
+  }
 });
+
 
 function handleLogo() {
   const pageType = document.getElementById('swup').dataset.page;
@@ -19,22 +45,6 @@ function handleLogo() {
     }
   }
 }
-
-swup.hooks.replace('animation:out:await', async () => {
-  console.log('ANIMATION OUT');
-  await gsap.to('#swup', { opacity: 0, y: 50, duration: 0.5 });
-});
-
-swup.hooks.replace('animation:in:await', async () => {
-  console.log('ANIMATION IN');
-  gsap.set('#swup', { opacity: 0, y: 50 });
-  handleLogo();
-
-
-  initPageAnimations();
-  await gsap.to('#swup', { opacity: 1, y: 0, duration: 0.5 });
-  ScrollTrigger.refresh();
-});
 
 
 // Общие обработчики событий
@@ -247,7 +257,7 @@ function initPageAnimations(container = document) {
         });
       });
     }
-    const caseItems = gsap.utils.toArray(container.querySelectorAll('.case-item'));
+    const caseItems = gsap.utils.toArray(container.querySelectorAll('.widget-cases__item'));
     if (caseItems.length > 0) {
       if (!isScrolled && firstScreen) {
         masterTimeline.add(() => animateCaseItems(caseItems), "-=0.3");
@@ -456,12 +466,91 @@ function initPageAnimations(container = document) {
   });
 }
 
+if (document.querySelector('.cases')) {
+  const filterBtns = document.querySelectorAll('.cases__filter');
+  const sortBtn = document.querySelector('.cases__sort-btn');
+  const cardsContainer = document.querySelector('.cases__items');
+  let cards = Array.from(document.querySelectorAll('.cases__item'));
+
+  let activeCategory = null;
+  let sortDirection = 'newest';
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      const category = this.dataset.filterCategory;
+
+      if (activeCategory === category) {
+        activeCategory = null;
+        this.classList.remove('_active');
+      } else {
+        activeCategory = category;
+        filterBtns.forEach(b => b.classList.remove('_active'));
+        this.classList.add('_active');
+      }
+
+      updateCards();
+    });
+  });
+
+  sortBtn.addEventListener('click', function () {
+    sortDirection = sortDirection === 'newest' ? 'oldest' : 'newest';
+    updateCards();
+  });
+
+  function updateCards() {
+    // Flip state
+    const state = Flip.getState(cards);
+
+    // Фильтрация
+    let filteredCards = cards.filter(card => {
+      if (!activeCategory) return true;
+      const categories = card.dataset.categories.split(',').map(cat => cat.trim());
+      return categories.includes(activeCategory);
+    });
+
+    // Удаляем все карточки
+    cards.forEach(card => {
+      if (card.parentNode === cardsContainer) {
+        cardsContainer.removeChild(card);
+      }
+    });
+
+
+    // Вставляем новые карточки
+    filteredCards.sort((a, b) => {
+      const yearA = parseInt(a.dataset.year);
+      const yearB = parseInt(b.dataset.year);
+      return sortDirection === 'newest' ? yearB - yearA : yearA - yearB;
+    });
+    filteredCards.forEach(card => cardsContainer.appendChild(card));
+
+    // Flip-анимация
+    Flip.from(state, {
+      duration: 0.7,
+      absolute: true,
+      scale: true,
+      fade: true,
+      ease: "power1.inOut",
+      stagger: 0.03,
+      // Опционально — кастомизируй вход/выход:
+      onEnter: el => gsap.fromTo(el, { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.55 }),
+      onLeave: el => gsap.to(el, { opacity: 0, scale: 0.92, duration: 0.45 }),
+      onComplete: () => {
+        setTimeout(() => {
+          ScrollTrigger.refresh()
+        }, 700);
+      }
+    })
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  gsap.registerPlugin(SplitText, ScrollTrigger);
+  gsap.registerPlugin(SplitText, ScrollTrigger, Flip);
   setupGlobalEvents();
   initPageAnimations();
-  handleLogo();
-  ScrollTrigger.refresh();
+  initSwup();
 });
 
-
+window.addEventListener('popstate', function (event) {
+  window.location.href = location.href;
+});
